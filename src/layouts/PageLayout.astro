@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  ogType?: string;
+}
+
+const { title, description, canonicalPath, ogType = 'website' } = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalPath={canonicalPath}
+  ogType={ogType}
+>
+  <div class="page-shell">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <Header currentPath={canonicalPath} />
+    <main id="main-content" class="site-main">
+      <slot />
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

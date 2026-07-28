@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+import { SITE_NAME, SITE_URL } from '../consts';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  ogType?: string;
+}
+
+const { title, description, canonicalPath, ogType = 'website' } = Astro.props;
+const canonicalURL = new URL(canonicalPath, SITE_URL).href;
+const ogImage = new URL('/app-icon.png', SITE_URL).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="theme-color" content="#f7f9fc" />
+    <meta name="color-scheme" content="light" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

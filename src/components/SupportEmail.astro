@@ -1,0 +1,18 @@
+---
+/**
+ * Accessible mailto link for the public Keyboard Studio support address.
+ */
+import { SUPPORT_EMAIL } from '../consts';
+
+interface Props {
+  class?: string;
+  subject?: string;
+}
+
+const { class: className, subject } = Astro.props;
+const href = subject
+  ? `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}`
+  : `mailto:${SUPPORT_EMAIL}`;
+---
+
+<a class={className} href={href}>{SUPPORT_EMAIL}</a>

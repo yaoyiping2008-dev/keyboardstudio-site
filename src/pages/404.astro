@@ -1,0 +1,21 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const title = 'Page Not Found — Keyboard Studio';
+const description = 'The page you requested could not be found on the Keyboard Studio website.';
+---
+
+<PageLayout title={title} description={description} canonicalPath="/404/">
+  <div class="container error-page">
+    <p class="error-page__code" aria-hidden="true">404</p>
+    <h1>Page not found</h1>
+    <p>
+      That page does not exist on the Keyboard Studio website. Try one of the links
+      below.
+    </p>
+    <div class="error-actions">
+      <a class="button" href="/">Back to Home</a>
+      <a class="button button--secondary" href="/support/">Support</a>
+    </div>
+  </div>
+</PageLayout>

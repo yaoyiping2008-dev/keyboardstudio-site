@@ -1,0 +1,33 @@
+---
+import SupportEmail from './SupportEmail.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer">
+    <div>
+      <div class="footer__brand">
+        <img src="/app-icon.png" width="28" height="28" alt="" aria-hidden="true" />
+        <span>Keyboard Studio</span>
+      </div>
+      <p class="footer__tagline">
+        A private, customizable keyboard for iPhone and iPad. Pay once. No subscription.
+      </p>
+      <p class="footer__tagline">
+        Email <SupportEmail /> for Keyboard Studio support.
+      </p>
+    </div>
+
+    <ul class="footer__links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/privacy/">Privacy</a></li>
+      <li><a href="/support/">Support</a></li>
+      <li><a href="/terms/">Terms</a></li>
+    </ul>
+
+    <p class="footer__meta">
+      © {year} Keyboard Studio. For iPhone and iPad. Coming to the App Store.
+    </p>
+  </div>
+</footer>

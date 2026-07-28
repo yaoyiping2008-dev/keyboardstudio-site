@@ -1,0 +1,212 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import SupportEmail from '../../components/SupportEmail.astro';
+
+const title = 'Support — Keyboard Studio';
+const description =
+  'Set up Keyboard Studio, enable Full Access optionally, troubleshoot click sound and haptics, and learn about phrases, dictionary, and layouts.';
+---
+
+<PageLayout title={title} description={description} canonicalPath="/support/">
+  <div class="page-hero">
+    <div class="container container--narrow">
+      <h1>Keyboard Studio Support</h1>
+      <p>
+        Setup guides and troubleshooting for Keyboard Studio on iPhone and iPad.
+      </p>
+    </div>
+  </div>
+
+  <div class="container container--narrow prose" style="padding-bottom: 4rem;">
+    <nav class="toc" aria-labelledby="toc-heading">
+      <p class="toc__title" id="toc-heading">On this page</p>
+      <ol>
+        <li><a href="#enable">Enable Keyboard Studio</a></li>
+        <li><a href="#full-access">Enable Full Access</a></li>
+        <li><a href="#click-sound">Keyboard click sound</a></li>
+        <li><a href="#haptics">Haptics</a></li>
+        <li><a href="#quick-phrases">Quick Phrases</a></li>
+        <li><a href="#personal-dictionary">Personal Dictionary</a></li>
+        <li><a href="#local-candidates">Local Candidates</a></li>
+        <li><a href="#autocorrection">Local Autocorrection</a></li>
+        <li><a href="#long-press">Long-press alternate characters</a></li>
+        <li><a href="#spacebar">Spacebar cursor movement</a></li>
+        <li><a href="#one-handed">One-handed layouts</a></li>
+        <li><a href="#ipad">iPad adaptive layout</a></li>
+        <li><a href="#safe-defaults">Restore Safe Defaults</a></li>
+        <li><a href="#globe">Switch keyboards with Globe</a></li>
+        <li><a href="#full-access-faq">Full Access privacy FAQ</a></li>
+        <li><a href="#contact">Contact support</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="enable">1. Enable Keyboard Studio</h2>
+    <p>Add Keyboard Studio as a system keyboard:</p>
+    <div class="support-steps" role="group" aria-label="Enable Keyboard Studio steps">
+      Settings<br />
+      → General<br />
+      → Keyboard<br />
+      → Keyboards<br />
+      → Add New Keyboard<br />
+      → Keyboard Studio
+    </div>
+    <p>
+      After adding the keyboard, open any text field, tap and hold the Globe key
+      (or use the keyboard switcher), and choose Keyboard Studio.
+    </p>
+
+    <h2 id="full-access">2. Enable Full Access</h2>
+    <p>
+      Full Access is optional. Without Full Access, basic typing works, the bundled
+      offline lexicon works, gestures and layouts work, and safe defaults are
+      available.
+    </p>
+    <p>With Full Access enabled:</p>
+    <ul>
+      <li>
+        Settings saved in the containing App may synchronize through the local App
+        Group container
+      </li>
+      <li>
+        Quick Phrases and Personal Dictionary created in the App may be available
+        to the keyboard
+      </li>
+      <li>
+        System keyboard click audio may be available when enabled
+      </li>
+    </ul>
+    <p>
+      <strong>Full Access does not enable networking in Keyboard Studio.</strong>
+      Keyboard Studio contains no feature that uploads keystrokes. Full Access is
+      not limited to sound only.
+    </p>
+    <p>
+      To enable Full Access, open
+      <strong>Settings → General → Keyboard → Keyboards → Keyboard Studio</strong>
+      and turn on Allow Full Access.
+    </p>
+
+    <h2 id="click-sound">3. Keyboard click sound troubleshooting</h2>
+    <p>If click sound is missing or inconsistent, check these steps:</p>
+    <ol>
+      <li>Enable Keyboard Feedback Sound in iOS Settings.</li>
+      <li>Enable System Click Sound in Keyboard Studio.</li>
+      <li>Save settings in Keyboard Studio.</li>
+      <li>Enable Full Access for Keyboard Studio.</li>
+      <li>
+        Remove and re-add the keyboard, or restart the Extension session where
+        needed.
+      </li>
+      <li>Confirm the Apple keyboard produces sound on your device.</li>
+      <li>
+        Note that custom-keyboard click loudness may differ from the Apple
+        keyboard.
+      </li>
+    </ol>
+    <p>
+      Do not install custom audio files for this feature. Keyboard Studio uses
+      system keyboard click audio when available.
+    </p>
+
+    <h2 id="haptics">4. Haptics troubleshooting</h2>
+    <p>
+      Keyboard Studio offers configurable haptic feedback, including Light, Medium,
+      and Strong settings. Physical feedback varies by device model, system haptic
+      settings, and whether haptics are supported on that hardware. If feedback
+      feels weak or absent, confirm system haptics are enabled and try a different
+      intensity in Keyboard Studio.
+    </p>
+
+    <h2 id="quick-phrases">5. Quick Phrases</h2>
+    <p>
+      Create Quick Phrases in the Keyboard Studio App. Phrases are stored locally.
+      With Full Access enabled, phrases created in the App may become available to
+      the Keyboard Extension through the local App Group container.
+    </p>
+
+    <h2 id="personal-dictionary">6. Personal Dictionary</h2>
+    <p>
+      Add words to your Personal Dictionary in the App. Entries remain local. With
+      Full Access enabled, dictionary entries created in the App may be available
+      to the keyboard through the local App Group container.
+    </p>
+
+    <h2 id="local-candidates">7. Local Candidates</h2>
+    <p>
+      Local word candidates are generated on-device. They do not require a network
+      connection and are not uploaded by Keyboard Studio.
+    </p>
+
+    <h2 id="autocorrection">8. Local Autocorrection</h2>
+    <p>
+      Bundled autocorrection is optional and off by default. When enabled, it works
+      locally using on-device resources, including the bundled offline lexicon.
+    </p>
+
+    <h2 id="long-press">9. Long-press alternate characters</h2>
+    <p>
+      Press and hold a key to access alternate characters where available, then
+      slide to the character you want and release.
+    </p>
+
+    <h2 id="spacebar">10. Spacebar cursor movement</h2>
+    <p>
+      Slide on the spacebar to move the cursor. This gesture works as part of the
+      keyboard’s local input controls.
+    </p>
+
+    <h2 id="one-handed">11. One-handed layouts</h2>
+    <p>
+      Choose left or right one-handed layouts to bring keys closer for single-hand
+      typing. You can switch back to the standard layout at any time.
+    </p>
+
+    <h2 id="ipad">12. iPad adaptive layout</h2>
+    <p>
+      On iPad, Keyboard Studio provides adaptive layouts intended to fit common
+      iPad typing arrangements. Layout availability depends on your device and
+      orientation.
+    </p>
+
+    <h2 id="safe-defaults">13. Restore Safe Defaults</h2>
+    <p>
+      If settings become confusing or typing behavior feels unexpected, use Restore
+      Safe Defaults in Keyboard Studio. This returns configurable options to a
+      known-safe baseline while leaving your decision about Full Access under your
+      control in iOS Settings.
+    </p>
+
+    <h2 id="globe">14. Switch keyboards with Globe</h2>
+    <p>
+      Tap the Globe key, or tap and hold it, to switch between Keyboard Studio and
+      other keyboards installed on your device.
+    </p>
+
+    <h2 id="full-access-faq">15. Full Access privacy FAQ</h2>
+    <h3>Does Full Access upload what I type?</h3>
+    <p>
+      No. Full Access does not enable networking in Keyboard Studio. Keyboard Studio
+      contains no feature that uploads keystrokes.
+    </p>
+    <h3>What does Full Access allow?</h3>
+    <p>
+      Full Access may allow the Keyboard Extension to read locally shared settings,
+      Quick Phrases, and Personal Dictionary data from the App Group container and
+      to request system keyboard click audio when enabled.
+    </p>
+    <h3>Is Full Access required?</h3>
+    <p>
+      No. Without Full Access, basic typing, the bundled offline lexicon, gestures,
+      layouts, and safe defaults remain available.
+    </p>
+
+    <h2 id="contact">16. Contact support</h2>
+    <p>
+      Email <SupportEmail subject="Keyboard Studio Support" /> for Keyboard Studio
+      support. You may send questions, bug reports, or feedback.
+    </p>
+    <p>
+      There is no contact form or ticket system on this site. Use email directly.
+    </p>
+  </div>
+</PageLayout>

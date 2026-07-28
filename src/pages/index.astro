@@ -1,0 +1,267 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const title = 'Keyboard Studio — Custom Keyboard for iPhone and iPad';
+const description =
+  'Create a private, personalized keyboard with themes, local candidates, personal phrases, cursor gestures, and adaptive layouts. Pay once, with no subscription.';
+---
+
+<PageLayout title={title} description={description} canonicalPath="/">
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <p class="hero__eyebrow">Keyboard Studio · iPhone &amp; iPad</p>
+        <h1 class="hero__title">Make Your Keyboard Feel Like Yours</h1>
+        <p class="hero__lead">
+          Keyboard Studio is a private, customizable keyboard for iPhone and iPad,
+          with themes, local candidates, personal phrases, cursor gestures, and
+          adaptive layouts.
+        </p>
+
+        <div class="hero__actions">
+          <span class="store-badge" aria-disabled="true">Coming to the App Store</span>
+          <a class="button button--secondary" href="/privacy/">Privacy first</a>
+        </div>
+
+        <ul class="pill-row" aria-label="Product highlights">
+          <li><span class="pill">Pay once</span></li>
+          <li><span class="pill">No subscription</span></li>
+          <li><span class="pill">Local-first privacy</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__icon-frame">
+          <img
+            class="hero__icon"
+            src="/app-icon.png"
+            width="220"
+            height="220"
+            alt="Keyboard Studio App Icon"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="features-heading">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow">Features</p>
+        <h2 class="section__title" id="features-heading">Built for everyday typing</h2>
+        <p class="section__lead">
+          Themes, layouts, phrases, and gestures—designed to stay on your device.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature">
+          <h3 class="feature__title">Themes</h3>
+          <p class="feature__text">
+            Choose built-in and custom keyboard themes, including Crystal Flow.
+          </p>
+        </article>
+        <article class="feature">
+          <h3 class="feature__title">Layouts</h3>
+          <p class="feature__text">
+            QWERTY, AZERTY, and QWERTZ, with an optional number row.
+          </p>
+        </article>
+        <article class="feature">
+          <h3 class="feature__title">Quick Phrases</h3>
+          <p class="feature__text">
+            Insert personal phrases you create and keep locally.
+          </p>
+        </article>
+        <article class="feature">
+          <h3 class="feature__title">Personal Dictionary</h3>
+          <p class="feature__text">
+            Add words that matter to you. Entries stay on your device.
+          </p>
+        </article>
+        <article class="feature">
+          <h3 class="feature__title">Local candidates</h3>
+          <p class="feature__text">
+            Word candidates generated on-device from local data.
+          </p>
+        </article>
+        <article class="feature">
+          <h3 class="feature__title">Optional autocorrection</h3>
+          <p class="feature__text">
+            Local autocorrection you can enable when you want it. Off by default.
+          </p>
+        </article>
+        <article class="feature">
+          <h3 class="feature__title">Offline ESDB lexicon</h3>
+          <p class="feature__text">
+            Bundled English Speller Database (ESDB) lexicon that works offline.
+          </p>
+        </article>
+        <article class="feature">
+          <h3 class="feature__title">Long-press characters</h3>
+          <p class="feature__text">
+            Access alternate characters with a long press.
+          </p>
+        </article>
+        <article class="feature">
+          <h3 class="feature__title">Spacebar cursor movement</h3>
+          <p class="feature__text">
+            Move the cursor by sliding on the spacebar.
+          </p>
+        </article>
+        <article class="feature">
+          <h3 class="feature__title">One-handed layouts</h3>
+          <p class="feature__text">
+            Left and right one-handed layouts for comfortable reach.
+          </p>
+        </article>
+        <article class="feature">
+          <h3 class="feature__title">Adaptive iPad layouts</h3>
+          <p class="feature__text">
+            Layouts that adapt for iPad use.
+          </p>
+        </article>
+        <article class="feature">
+          <h3 class="feature__title">Sound &amp; haptics</h3>
+          <p class="feature__text">
+            Keyboard click sound and configurable haptic feedback.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="privacy-heading">
+    <div class="container split">
+      <div class="section__header" style="margin-bottom: 0;">
+        <p class="section__eyebrow">Privacy</p>
+        <h2 class="section__title" id="privacy-heading">Your typing stays with you</h2>
+        <p class="section__lead">
+          Keyboard Studio is built around local-first privacy. There is no account,
+          no cloud service, and no network feature for keystrokes.
+        </p>
+        <p style="margin-top: 1.5rem;">
+          <a href="/privacy/">Read the Privacy Policy</a>
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3 class="panel__title">What stays local</h3>
+        <ul class="checklist">
+          <li>Typed text is not collected or uploaded</li>
+          <li>No analytics and no advertising</li>
+          <li>No account and no cloud service</li>
+          <li>No network feature for typing data</li>
+          <li>Quick Phrases and Personal Dictionary remain local</li>
+          <li>The bundled lexicon works offline</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="full-access-heading">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow">Full Access</p>
+        <h2 class="section__title" id="full-access-heading">Full Access is optional</h2>
+        <p class="section__lead">
+          You choose whether to allow Full Access. Keyboard Studio does not require
+          it for core typing.
+        </p>
+      </div>
+
+      <div class="split">
+        <div class="panel">
+          <h3 class="panel__title">Without Full Access</h3>
+          <ul class="checklist">
+            <li>Basic typing works</li>
+            <li>The bundled offline lexicon works</li>
+            <li>Gestures and layouts work</li>
+            <li>Safe defaults are available</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3 class="panel__title">With Full Access</h3>
+          <ul class="checklist">
+            <li>
+              Settings saved in the containing App may synchronize through the local
+              App Group container
+            </li>
+            <li>
+              Quick Phrases and Personal Dictionary created in the App may be
+              available to the keyboard
+            </li>
+            <li>
+              System keyboard click audio may be available when enabled
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top: 1.5rem;">
+        <p style="margin: 0; color: var(--color-text-secondary);">
+          <strong>Full Access does not enable networking in Keyboard Studio.</strong>
+          Keyboard Studio contains no feature that uploads keystrokes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="pricing-heading">
+    <div class="container">
+      <div class="cta-band">
+        <h2 class="cta-band__title" id="pricing-heading">One Purchase. No Subscription.</h2>
+        <p class="cta-band__text">
+          Keyboard Studio is planned as a paid App Store download. There are no
+          subscriptions, feature tiers, consumable purchases, Restore Purchase flow,
+          or advertisements. Pay once to download. All included features are available
+          after installation. No In-App Purchases.
+        </p>
+        <span class="store-badge" aria-disabled="true">Coming to the App Store</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow">FAQ</p>
+        <h2 class="section__title" id="faq-heading">Common questions</h2>
+        <p class="section__lead">
+          Short answers here—full setup and troubleshooting on Support.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <article class="faq-item">
+          <h3>Is Keyboard Studio free?</h3>
+          <p>
+            No. It is planned as a paid App Store download. Pay once, with no
+            subscription and no In-App Purchases.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>Does Keyboard Studio collect what I type?</h3>
+          <p>
+            No. Typed text is not collected or uploaded. There is no analytics SDK
+            and no advertising.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>Do I need Full Access?</h3>
+          <p>
+            No. Full Access is optional. Without it, basic typing, the offline
+            lexicon, gestures, and layouts still work.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>Where can I get help?</h3>
+          <p>
+            Visit the <a href="/support/">Support</a> page for setup steps,
+            troubleshooting, and contact information.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</PageLayout>
