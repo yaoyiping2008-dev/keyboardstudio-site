@@ -3,7 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 
 const title = 'Keyboard Studio — Custom Keyboard for iPhone and iPad';
 const description =
-  'Create a private, personalized keyboard with themes, local candidates, personal phrases, cursor gestures, and adaptive layouts. Pay once, with no subscription.';
+  'Create a private, personalized keyboard with themes, local candidates, Emoji search, swipe typing, personal phrases, and adaptive layouts. Pay once, with no subscription.';
 ---
 
 <PageLayout title={title} description={description} canonicalPath="/">
@@ -14,8 +14,8 @@ const description =
         <h1 class="hero__title">Make Your Keyboard Feel Like Yours</h1>
         <p class="hero__lead">
           Keyboard Studio is a private, customizable keyboard for iPhone and iPad,
-          with themes, local candidates, personal phrases, cursor gestures, and
-          adaptive layouts.
+          with themes, local candidates, Emoji search, swipe typing, personal
+          phrases, and adaptive layouts.
         </p>
 
         <div class="hero__actions">
@@ -86,6 +86,18 @@ const description =
           </p>
         </article>
         <article class="feature">
+          <h3 class="feature__title">Local Emoji search</h3>
+          <p class="feature__text">
+            Find Emoji using a bundled catalog and on-device search.
+          </p>
+        </article>
+        <article class="feature">
+          <h3 class="feature__title">Swipe typing</h3>
+          <p class="feature__text">
+            Supported swipe paths are interpreted locally on your device.
+          </p>
+        </article>
+        <article class="feature">
           <h3 class="feature__title">Optional autocorrection</h3>
           <p class="feature__text">
             Local autocorrection you can enable when you want it. Off by default.
@@ -127,6 +139,12 @@ const description =
             Keyboard click sound and configurable haptic feedback.
           </p>
         </article>
+        <article class="feature">
+          <h3 class="feature__title">Photo Background</h3>
+          <p class="feature__text">
+            Choose and adjust a keyboard background photo that is processed locally.
+          </p>
+        </article>
       </div>
     </div>
   </section>
@@ -137,8 +155,9 @@ const description =
         <p class="section__eyebrow">Privacy</p>
         <h2 class="section__title" id="privacy-heading">Your typing stays with you</h2>
         <p class="section__lead">
-          Keyboard Studio is built around local-first privacy. There is no account,
-          no cloud service, and no network feature for keystrokes.
+          Keyboard Studio performs supported typing features on-device. There is no
+          account, cloud typing service, advertising, analytics, or server-side
+          keyboard prediction.
         </p>
         <p style="margin-top: 1.5rem;">
           <a href="/privacy/">Read the Privacy Policy</a>
@@ -149,9 +168,9 @@ const description =
         <h3 class="panel__title">What stays local</h3>
         <ul class="checklist">
           <li>Typed text is not collected or uploaded</li>
-          <li>No analytics and no advertising</li>
-          <li>No account and no cloud service</li>
-          <li>No network feature for typing data</li>
+          <li>No analytics, behavioral tracking, or advertising</li>
+          <li>No account or cloud typing service</li>
+          <li>Candidates, Emoji search, and swipe typing are processed locally</li>
           <li>Quick Phrases and Personal Dictionary remain local</li>
           <li>The bundled lexicon works offline</li>
         </ul>
@@ -192,7 +211,7 @@ const description =
               available to the keyboard
             </li>
             <li>
-              System keyboard click audio may be available when enabled
+              Supported iOS keyboard feedback may be available when enabled
             </li>
           </ul>
         </div>
@@ -200,8 +219,11 @@ const description =
 
       <div class="panel" style="margin-top: 1.5rem;">
         <p style="margin: 0; color: var(--color-text-secondary);">
-          <strong>Full Access does not enable networking in Keyboard Studio.</strong>
-          Keyboard Studio contains no feature that uploads keystrokes.
+          <strong>iOS grants third-party keyboards additional capabilities when Full
+          Access is enabled.</strong> Keyboard Studio uses it for supported local
+          app-to-keyboard sharing and feedback. It does not use Full Access to upload
+          typing, swipe paths, Emoji searches, phrases, or dictionary entries, or to
+          activate accounts, advertising, or analytics.
         </p>
       </div>
     </div>

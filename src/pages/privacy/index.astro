@@ -6,7 +6,7 @@ const title = 'Privacy Policy — Keyboard Studio';
 const description =
   'Privacy Policy for Keyboard Studio. Learn how typing data, phrases, settings, Full Access, and local storage are handled.';
 const effectiveDate = 'July 28, 2026';
-const lastUpdated = 'July 28, 2026';
+const lastUpdated = 'August 13, 2026';
 ---
 
 <PageLayout title={title} description={description} canonicalPath="/privacy/">
@@ -36,11 +36,15 @@ const lastUpdated = 'July 28, 2026';
         <li><a href="#document-context">Document context</a></li>
         <li><a href="#phrases">Quick Phrases</a></li>
         <li><a href="#dictionary">Personal Dictionary</a></li>
-        <li><a href="#themes">Themes and preferences</a></li>
+        <li><a href="#candidates">Local candidates and autocorrection</a></li>
+        <li><a href="#emoji">Emoji search</a></li>
+        <li><a href="#swipe">Swipe typing</a></li>
+        <li><a href="#themes">Themes and customization</a></li>
+        <li><a href="#photo-background">Photo Background</a></li>
         <li><a href="#esdb">Bundled ESDB lexicon</a></li>
         <li><a href="#full-access">Full Access</a></li>
-        <li><a href="#app-group">App Group synchronization</a></li>
-        <li><a href="#click-audio">Keyboard click audio</a></li>
+        <li><a href="#app-group">Local App Group sharing</a></li>
+        <li><a href="#feedback">Sound and haptic feedback</a></li>
         <li><a href="#network">Network access</a></li>
         <li><a href="#analytics">Analytics, tracking, and advertising</a></li>
         <li><a href="#sdks">Third-party SDKs</a></li>
@@ -63,18 +67,18 @@ const lastUpdated = 'July 28, 2026';
 
     <h2 id="collection">Developer collection practices</h2>
     <p>
-      <strong>
-        Keyboard Studio does not collect, transmit, sell, or share typed text.
-      </strong>
-      The developer does not operate a backend service that receives keystrokes,
-      document content, Quick Phrases, Personal Dictionary entries, or keyboard
-      settings from Keyboard Studio.
+      <strong>Keyboard Studio does not sell user data.</strong> It requires no user
+      account and includes no advertising, analytics service, behavioral tracking,
+      server-side keyboard prediction, or cloud typing service. The developer does
+      not operate a backend service that receives typed text, document context,
+      swipe paths, Emoji searches, Quick Phrases, Personal Dictionary entries, or
+      keyboard settings from Keyboard Studio.
     </p>
 
     <h2 id="local-storage">Local storage</h2>
     <p>
       <strong>
-        Quick Phrases, Personal Dictionary entries, custom themes, and settings are
+        Quick Phrases, Personal Dictionary entries, customizations, and settings are
         stored locally.
       </strong>
       Data created or configured in Keyboard Studio remains on your device, subject
@@ -84,15 +88,17 @@ const lastUpdated = 'July 28, 2026';
 
     <h2 id="typed-text">Typed text</h2>
     <p>
-      Keyboard Studio does not collect, transmit, sell, or share typed text. There
-      is no feature that uploads keystrokes to the developer or to a remote service.
+      Keyboard input used for supported typing functions is processed locally while
+      the keyboard operates. Keyboard Studio does not upload typed text for candidate
+      generation, prediction, or other server-side keyboard processing.
     </p>
 
     <h2 id="document-context">Document context</h2>
     <p>
-      <strong>Keyboard Studio does not transmit surrounding document context.</strong>
-      The App and Keyboard Extension are not designed to send surrounding text from
-      documents or input fields to a remote destination.
+      While the keyboard is active, supported typing functions may inspect text or
+      document context made available by iOS. That context is processed locally for
+      the current keyboard operation; Keyboard Studio does not upload it to a
+      Keyboard Studio server or save host-application text as persistent user data.
     </p>
 
     <h2 id="phrases">Quick Phrases</h2>
@@ -100,7 +106,9 @@ const lastUpdated = 'July 28, 2026';
       Quick Phrases you create are stored locally. When Full Access is enabled,
       phrases created in the containing App may be available to the Keyboard
       Extension through the local App Group container. Quick Phrases are not
-      uploaded by Keyboard Studio.
+      uploaded by Keyboard Studio. Phrases remain on the device until you remove
+      them or delete the App, subject
+      to normal iOS behavior.
     </p>
 
     <h2 id="dictionary">Personal Dictionary</h2>
@@ -108,15 +116,48 @@ const lastUpdated = 'July 28, 2026';
       Personal Dictionary entries you create are stored locally. When Full Access
       is enabled, entries created in the containing App may be available to the
       Keyboard Extension through the local App Group container. Personal Dictionary
-      data is not uploaded by Keyboard Studio.
+      data is not uploaded by Keyboard Studio. Entries remain on the device until
+      you remove them or delete the App, subject
+      to normal iOS behavior.
     </p>
 
-    <h2 id="themes">Themes and preferences</h2>
+    <h2 id="candidates">Local candidates and autocorrection</h2>
     <p>
-      Themes, layout choices, sound preferences, haptic preferences, and related
-      settings are stored locally. With Full Access enabled, settings saved in the
-      containing App may synchronize to the Keyboard Extension through the local
-      App Group container.
+      Supported word candidates and optional autocorrection are generated on-device
+      using local information and bundled lexical resources. Keyboard Studio does
+      not provide cloud AI, server-side prediction, or remote personalization for
+      these features.
+    </p>
+
+    <h2 id="emoji">Emoji search</h2>
+    <p>
+      Emoji are provided through a bundled catalog with local Unicode and
+      CLDR-derived search information. Emoji search text is matched locally and is
+      not sent to a Keyboard Studio server.
+    </p>
+
+    <h2 id="swipe">Swipe typing</h2>
+    <p>
+      Supported swipe typing is processed on-device. Keyboard Studio does not upload
+      swipe paths or use a remote account or server to learn typing behavior.
+    </p>
+
+    <h2 id="themes">Themes and customization</h2>
+    <p>
+      Built-in theme choices, key appearance, key size, spacing and geometry, Touch
+      Area, layouts, Split and adaptive layout options, animations, Glow, sound and
+      haptic preferences, text and label settings, and related configuration are
+      stored locally. These settings customize the keyboard; they are not remote
+      advertising profiles.
+    </p>
+
+    <h2 id="photo-background">Photo Background</h2>
+    <p>
+      You choose a Photo Background through Apple’s system photo-selection
+      interface. Keyboard Studio processes the selection locally, and an optimized
+      or processed keyboard-background copy may be stored locally for keyboard use.
+      Keyboard Studio does not upload the photo to a Keyboard Studio server. You can
+      change, re-crop, or remove the selected background in the App.
     </p>
 
     <h2 id="esdb">Bundled ESDB lexicon</h2>
@@ -132,50 +173,57 @@ const lastUpdated = 'July 28, 2026';
 
     <h2 id="full-access">Full Access</h2>
     <p>
-      Full Access is optional. Without Full Access, basic typing, the bundled
-      offline lexicon, gestures, layouts, and safe defaults remain available.
+      Allow Full Access is an iOS setting for third-party keyboards. Enabling it
+      gives a keyboard additional system capabilities, which can include access to
+      shared-container data and network capability. Full Access is optional;
+      without it, basic typing, the bundled offline lexicon, gestures, layouts, and
+      safe defaults remain available.
     </p>
     <p>
       <strong>
-        Full Access may allow the Keyboard Extension to read locally shared
-        settings, Quick Phrases, and Personal Dictionary data from the App Group
-        container and to request system keyboard click audio.
+        Keyboard Studio uses Full Access where applicable for supported local
+        configuration sharing between the App and Keyboard Extension and for
+        supported iOS keyboard feedback behavior.
       </strong>
     </p>
     <p>
-      <strong>Full Access does not activate a network feature.</strong>
-      Full Access does not enable networking in Keyboard Studio. Keyboard Studio
-      contains no feature that uploads keystrokes.
+      Enabling Full Access does not cause Keyboard Studio to upload typed text,
+      document context, swipe paths, Emoji searches, Personal Dictionary entries,
+      Quick Phrases, photos, or settings. It does not create an account or activate
+      advertising, analytics, behavioral tracking, server-side prediction, or a
+      cloud typing service.
     </p>
 
-    <h2 id="app-group">App Group synchronization</h2>
+    <h2 id="app-group">Local App Group sharing</h2>
     <p>
       When Full Access is enabled, settings, Quick Phrases, and Personal Dictionary
-      data may synchronize between the containing App and the Keyboard Extension
-      through a local App Group container on the device. This synchronization is
-      local and is not a cloud synchronization service operated by Keyboard Studio.
+      data and other supported configuration may be shared between the Keyboard
+      Studio App and Keyboard Studio keyboard extension through Apple’s local App
+      Group container mechanism. This is local app-to-extension sharing, not cloud
+      synchronization.
     </p>
 
-    <h2 id="click-audio">Keyboard click audio</h2>
+    <h2 id="feedback">Sound and haptic feedback</h2>
     <p>
-      When Full Access is enabled and related settings are turned on, Keyboard
-      Studio may request system keyboard click audio. Full Access is not limited to
-      sound; it may also allow local reading of shared settings, Quick Phrases, and
-      Personal Dictionary data as described above.
+      Keyboard Studio uses supported iOS public system feedback facilities where
+      available for keyboard sound and haptics. Availability and behavior can vary
+      by device and iOS settings. Feedback does not require Keyboard Studio to
+      transmit typed content.
     </p>
 
     <h2 id="network">Network access</h2>
     <p>
-      Keyboard Studio contains no network feature for uploading keystrokes,
-      phrases, dictionary entries, themes, or settings. Full Access does not enable
-      networking in Keyboard Studio.
+      The current product has no remote typing, prediction, Emoji-search, swipe,
+      account, or cloud-sync service. Although iOS grants additional capabilities
+      to a third-party keyboard when Full Access is enabled, Keyboard Studio does
+      not use those capabilities to upload typed content or the local data described
+      in this policy.
     </p>
 
     <h2 id="analytics">Analytics, tracking, and advertising</h2>
     <p>
-      Keyboard Studio does not include analytics, tracking, or advertising for the
-      purpose of collecting typed text or user behavior for the developer. There is
-      no advertising in Keyboard Studio.
+      Keyboard Studio includes no analytics service, behavioral tracking, or
+      advertising. It does not create advertising profiles from keyboard use.
     </p>
 
     <h2 id="sdks">Third-party SDKs</h2>
@@ -200,15 +248,18 @@ const lastUpdated = 'July 28, 2026';
       because the App is not designed to collect personal information from users.
     </p>
 
-    <h2 id="deletion">Data deletion</h2>
+    <h2 id="deletion">Local data retention and deletion</h2>
     <p>
       <strong>
-        Deleting the App may remove locally stored App data and settings, subject to
-        normal iOS behavior.
+        Local Keyboard Studio data may remain on the device until you remove an
+        individual item, change or reset the relevant configuration, or delete the
+        App, depending on the feature and subject to normal iOS behavior.
       </strong>
       Because Keyboard Studio does not maintain a developer-operated cloud copy of
       your phrases, dictionary entries, or settings, there is no separate remote
-      deletion request process for that data.
+      deletion request process or cloud recovery for that data. Deleted local data
+      may not be recoverable. You can disable Full Access at any time in iOS
+      Settings.
     </p>
 
     <h2 id="changes">Changes to this policy</h2>

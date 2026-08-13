@@ -78,5 +78,6 @@ See [SITE_RELEASE_CHECKLIST.md](./SITE_RELEASE_CHECKLIST.md).
 
 - Paid App Store download: pay once, no subscription, no In-App Purchases, no advertising
 - Do not claim App Store availability before launch; use “Coming to the App Store”
-- Full Access is optional and does not enable networking
-- Typed text is not collected or uploaded
+- Full Access is optional; Keyboard Studio uses it for supported local sharing and feedback
+- Typed text, swipe paths, and Emoji searches are processed locally and are not uploaded by Keyboard Studio
+- No account, cloud typing service, analytics, behavioral tracking, or advertising

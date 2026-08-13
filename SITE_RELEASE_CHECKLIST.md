@@ -12,6 +12,7 @@ Complete every item before treating [https://keyboardstudio.de5.net](https://key
 - [ ] Periodically retest `support@keyboardstudio.de5.net` delivery
 - [ ] Search for other placeholders (`TODO`, `PLACEHOLDER`, `example.com`) and resolve them
 - [ ] Verify all legal copy on `/privacy/` and `/terms/`
+- [ ] Confirm Home, Privacy, Support, Terms, Footer, and README privacy claims remain consistent
 - [ ] Confirm product claims remain accurate (no App Store availability claim before launch)
 
 ## Functional checks
