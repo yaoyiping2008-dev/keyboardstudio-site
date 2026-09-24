@@ -1,10 +1,19 @@
 ---
 import SupportEmail from './SupportEmail.astro';
+import { APP_STORE_URL } from '../consts';
 
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
+  <div class="container footer-cta">
+    <div>
+      <p class="footer-cta__eyebrow">Your keyboard. Your style.</p>
+      <h2>Make every tap feel like yours.</h2>
+    </div>
+    <a class="button button--light" href={APP_STORE_URL}>Download on the App Store</a>
+  </div>
+
   <div class="container footer">
     <div>
       <div class="footer__brand">
@@ -12,7 +21,8 @@ const year = new Date().getFullYear();
         <span>Keyboard Studio</span>
       </div>
       <p class="footer__tagline">
-        A private, customizable keyboard with on-device typing features. Pay once. No subscription.
+        Custom themes, multilingual typing, and local typing tools for iPhone and iPad.
+        Free to download. No subscription.
       </p>
       <p class="footer__tagline">
         Email <SupportEmail /> for Keyboard Studio support.
@@ -24,10 +34,11 @@ const year = new Date().getFullYear();
       <li><a href="/privacy/">Privacy</a></li>
       <li><a href="/support/">Support</a></li>
       <li><a href="/terms/">Terms</a></li>
+      <li><a href={APP_STORE_URL}>App Store</a></li>
     </ul>
 
     <p class="footer__meta">
-      © {year} Keyboard Studio. For iPhone and iPad. Coming to the App Store.
+      © {year} Keyboard Studio. For iPhone and iPad.
     </p>
   </div>
 </footer>

@@ -76,8 +76,10 @@ See [SITE_RELEASE_CHECKLIST.md](./SITE_RELEASE_CHECKLIST.md).
 
 ## Product wording notes
 
-- Paid App Store download: pay once, no subscription, no In-App Purchases, no advertising
-- Do not claim App Store availability before launch; use “Coming to the App Store”
+- Free App Store download with a Free experience
+- Eligible users may claim a 3-Day Pro Trial, then return to Free
+- Lifetime Pro is a one-time In-App Purchase; there is no subscription
+- App Store URL: <https://apps.apple.com/app/keyboard-studio-custom-keys/id6801160596>
 - Full Access is optional; Keyboard Studio uses it for supported local sharing and feedback
 - Typed text, swipe paths, and Emoji searches are processed locally and are not uploaded by Keyboard Studio
 - No account, cloud typing service, analytics, behavioral tracking, or advertising

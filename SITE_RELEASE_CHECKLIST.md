@@ -13,7 +13,7 @@ Complete every item before treating [https://keyboardstudio.de5.net](https://key
 - [ ] Search for other placeholders (`TODO`, `PLACEHOLDER`, `example.com`) and resolve them
 - [ ] Verify all legal copy on `/privacy/` and `/terms/`
 - [ ] Confirm Home, Privacy, Support, Terms, Footer, and README privacy claims remain consistent
-- [ ] Confirm product claims remain accurate (no App Store availability claim before launch)
+- [ ] Confirm product claims and the current App Store link remain accurate
 
 ## Functional checks
 

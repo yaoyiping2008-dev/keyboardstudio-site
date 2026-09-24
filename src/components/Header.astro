@@ -1,5 +1,5 @@
 ---
-import { NAV_LINKS } from '../consts';
+import { APP_STORE_URL, NAV_LINKS } from '../consts';
 
 interface Props {
   currentPath?: string;
@@ -26,20 +26,28 @@ const { currentPath = '/' } = Astro.props;
       <span class="nav__toggle-icon" aria-hidden="true"></span>
     </button>
 
-    <ul class="nav__links" id="site-nav" data-nav-links>
-      {
-        NAV_LINKS.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              aria-current={currentPath === link.href ? 'page' : undefined}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <div class="nav__menu" id="site-nav" data-nav-links>
+      <ul class="nav__links">
+        {
+          currentPath === '/' && (
+            <li><a href="#features">Features</a></li>
+          )
+        }
+        {
+          NAV_LINKS.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                aria-current={currentPath === link.href ? 'page' : undefined}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <a class="nav__cta" href={APP_STORE_URL}>Get Keyboard Studio</a>
+    </div>
   </div>
 </header>
 

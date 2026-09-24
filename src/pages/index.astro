@@ -1,289 +1,299 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import { APP_STORE_URL } from '../consts';
 
-const title = 'Keyboard Studio — Custom Keyboard for iPhone and iPad';
+const title = 'Keyboard Studio – Custom Keyboard Themes for iPhone';
 const description =
-  'Create a private, personalized keyboard with themes, local candidates, Emoji search, swipe typing, personal phrases, and adaptive layouts. Pay once, with no subscription.';
+  'Customize your iPhone keyboard with photos, themes, dynamic backgrounds, Swipe typing, key sounds and support for 20+ languages. Download Keyboard Studio on the App Store.';
+
+const showcase = [
+  { src: '/media/themes-customization.jpg', alt: 'Keyboard Studio theme editor with a custom photo and animated media controls', label: 'Themes & animated media' },
+  { src: '/media/languages-20-plus.jpg', alt: 'Keyboard Studio language picker showing more than twenty supported typing languages', label: '20+ typing languages' },
+  { src: '/media/japanese-kana.jpg', alt: 'Keyboard Studio Japanese Kana Flick keyboard in several custom themes', label: 'Japanese Kana Flick' },
+  { src: '/media/korean-keyboard.jpg', alt: 'Keyboard Studio Korean keyboard in several custom photo themes', label: 'Korean' },
+  { src: '/media/arabic-keyboard.jpg', alt: 'Keyboard Studio Arabic keyboard with local candidates and custom themes', label: 'Arabic' },
+  { src: '/media/german-qwertz.jpg', alt: 'Keyboard Studio German QWERTZ keyboard theme collection', label: 'German QWERTZ' },
+  { src: '/media/italian-keyboard.jpg', alt: 'Keyboard Studio Italian keyboard theme collection', label: 'Italian' },
+];
+
+const languages = [
+  ['🇺🇸', 'English'], ['🇬🇧', 'English UK'], ['🌎', 'Español (Latinoamérica)'],
+  ['🇪🇸', 'Español (España)'], ['🇫🇷', 'Français'], ['🇩🇪', 'Deutsch'],
+  ['🇮🇹', 'Italiano'], ['🇳🇱', 'Nederlands'], ['🇧🇷', 'Português (Brasil)'],
+  ['🇵🇹', 'Português (Portugal)'], ['🇷🇴', 'Română'], ['🇭🇷', 'Hrvatski'],
+  ['🇭🇺', 'Magyar'], ['🇱🇹', 'Lietuvių'], ['🇱🇺', 'Lëtzebuergesch'],
+  ['🇻🇳', 'Tiếng Việt'], ['🇧🇬', 'Български'], ['🇷🇺', 'Русский'],
+  ['🇷🇸', 'Српски'], ['🇺🇦', 'Українська'], ['🇰🇷', '한국어'],
+  ['🌐', 'العربية'], ['🇯🇵', '日本語'],
+];
 ---
 
 <PageLayout title={title} description={description} canonicalPath="/">
-  <section class="hero">
+  <section class="hero hero--product">
     <div class="container hero__grid">
-      <div>
-        <p class="hero__eyebrow">Keyboard Studio · iPhone &amp; iPad</p>
-        <h1 class="hero__title">Make Your Keyboard Feel Like Yours</h1>
+      <div class="hero__copy">
+        <p class="eyebrow eyebrow--glow">Keyboard Studio · Custom Themes</p>
+        <h1 class="hero__title">Make Your Keyboard <span>Truly Yours.</span></h1>
         <p class="hero__lead">
-          Keyboard Studio is a private, customizable keyboard for iPhone and iPad,
-          with themes, local candidates, Emoji search, swipe typing, personal
-          phrases, and adaptive layouts.
+          Photos, themes, dynamic backgrounds, multilingual typing, Swipe, sounds and
+          more — built for your everyday keyboard.
         </p>
-
         <div class="hero__actions">
-          <span class="store-badge" aria-disabled="true">Coming to the App Store</span>
-          <a class="button button--secondary" href="/privacy/">Privacy first</a>
+          <a class="button button--store" href={APP_STORE_URL}>
+            <img src="/app-icon.png" width="28" height="28" alt="" aria-hidden="true" />
+            <span><small>Download on the</small>App Store</span>
+          </a>
+          <a class="button button--secondary" href="#features">Explore Features</a>
         </div>
-
-        <ul class="pill-row" aria-label="Product highlights">
-          <li><span class="pill">Pay once</span></li>
-          <li><span class="pill">No subscription</span></li>
-          <li><span class="pill">Local-first privacy</span></li>
+        <ul class="hero__facts" aria-label="Product highlights">
+          <li><strong>20+</strong><span>typing languages</span></li>
+          <li><strong>10</strong><span>dynamic effects</span></li>
+          <li><strong>6</strong><span>premium key sounds</span></li>
         </ul>
       </div>
 
       <div class="hero__visual">
-        <div class="hero__icon-frame">
+        <div class="hero__halo" aria-hidden="true"></div>
+        <figure class="hero__shot">
           <img
-            class="hero__icon"
-            src="/app-icon.png"
-            width="220"
-            height="220"
-            alt="Keyboard Studio App Icon"
+            src="/media/keyboard-studio-hero.jpg"
+            width="1500"
+            height="2000"
+            alt="Keyboard Studio custom keyboards with photo, glass, and colorful themes"
+            fetchpriority="high"
           />
+        </figure>
+      </div>
+    </div>
+    <a class="hero__scroll" href="#showcase" aria-label="Scroll to product showcase">
+      <span aria-hidden="true">↓</span> See it in action
+    </a>
+  </section>
+
+  <section class="showcase" id="showcase" aria-labelledby="showcase-heading">
+    <div class="container section-heading section-heading--center">
+      <p class="eyebrow">Designed to feel personal</p>
+      <h2 id="showcase-heading">One keyboard. Endless character.</h2>
+      <p>Real Keyboard Studio screens, curated across themes and languages.</p>
+    </div>
+
+    <div class="showcase__rail" aria-label="Keyboard Studio product screenshots">
+      {
+        showcase.map((item, index) => (
+          <figure class="showcase-card">
+            <div class="showcase-card__image">
+              <img
+                src={item.src}
+                width="900"
+                height="1955"
+                alt={item.alt}
+                loading={index < 2 ? 'eager' : 'lazy'}
+              />
+            </div>
+            <figcaption>{item.label}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+
+    <div class="container showcase__cta">
+      <p>Ready to make the keyboard you want?</p>
+      <a class="text-link" href={APP_STORE_URL}>Get Keyboard Studio <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <section class="section section--ink" id="features" aria-labelledby="customize-heading">
+    <div class="container">
+      <div class="section-heading section-heading--light">
+        <p class="eyebrow">Customize your keyboard</p>
+        <h2 id="customize-heading">Every detail, dialed in.</h2>
+        <p>
+          Build around a favorite photo, refine the keys, then tune the type,
+          animation, and visibility until it feels unmistakably yours.
+        </p>
+      </div>
+
+      <div class="feature-editorial">
+        <article class="feature-card feature-card--aurora">
+          <div class="feature-card__number">10</div>
+          <div>
+            <p class="feature-card__kicker">Dynamic effects</p>
+            <h3>Bring the background to life.</h3>
+            <p>
+              Falling Snow, Sakura Rain, Meteor Shower, Fireflies, Rain Drops,
+              Floating Bubbles, Twinkling Stars, Falling Leaves, Water Ripples, and Aurora.
+            </p>
+          </div>
+        </article>
+
+        <article class="feature-card feature-card--media">
+          <div class="media-orbit" aria-hidden="true">
+            <span>GIF</span><span>APNG</span><span>WebP</span><span>MP4</span>
+          </div>
+          <div>
+            <p class="feature-card__kicker">Animated media</p>
+            <h3>More than a still background.</h3>
+            <p>Add animated images or video and turn everyday typing into something alive.</p>
+          </div>
+        </article>
+
+        <article class="feature-card feature-card--controls">
+          <div class="control-stack" aria-hidden="true">
+            <div><span>Photo visibility</span><strong>76%</strong></div>
+            <i style="--level: 76%"></i>
+            <div><span>Key opacity</span><strong>84%</strong></div>
+            <i style="--level: 84%"></i>
+          </div>
+          <div>
+            <p class="feature-card__kicker">Fine controls</p>
+            <h3>Your look, down to the key.</h3>
+            <p>Adjust photo visibility, keyboard opacity, key appearance, text, and animation.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section languages" aria-labelledby="languages-heading">
+    <div class="container languages__layout">
+      <div class="languages__intro">
+        <p class="eyebrow">Multilingual by design</p>
+        <h2 id="languages-heading">Type in 20+ Languages</h2>
+        <p>
+          Move naturally between 23 typing languages and language variants, with
+          layouts made for the way each language works.
+        </p>
+        <div class="language-details">
+          <article><span aria-hidden="true">あ</span><strong>Japanese</strong><small>Kana Flick and Romaji conversion</small></article>
+          <article><span aria-hidden="true">한</span><strong>Korean</strong><small>Dedicated Korean keyboard</small></article>
+          <article><span aria-hidden="true">ض</span><strong>Arabic</strong><small>Purpose-built Arabic layout</small></article>
+          <article><span aria-hidden="true">ă</span><strong>Vietnamese</strong><small>Telex input</small></article>
         </div>
       </div>
+
+      <div class="language-cloud" aria-label="Supported typing languages">
+        {languages.map(([flag, name]) => <span><i aria-hidden="true">{flag}</i>{name}</span>)}
+      </div>
+    </div>
+
+    <div class="container layout-strip" aria-label="Additional language-specific typing features">
+      <span>German QWERTZ</span>
+      <span>Italian QWERTY</span>
+      <span>Cyrillic families</span>
+      <span>Quick ABC switching</span>
     </div>
   </section>
 
-  <section class="section section--alt" aria-labelledby="features-heading">
+  <section class="section section--soft" aria-labelledby="typing-heading">
     <div class="container">
-      <div class="section__header">
-        <p class="section__eyebrow">Features</p>
-        <h2 class="section__title" id="features-heading">Built for everyday typing</h2>
-        <p class="section__lead">
-          Themes, layouts, phrases, and gestures—designed to stay on your device.
-        </p>
+      <div class="section-heading">
+        <p class="eyebrow">Built for the way you type</p>
+        <h2 id="typing-heading">Fast when you want it. Thoughtful underneath.</h2>
       </div>
 
-      <div class="feature-grid">
-        <article class="feature">
-          <h3 class="feature__title">Themes</h3>
-          <p class="feature__text">
-            Choose built-in and custom keyboard themes, including Crystal Flow.
-          </p>
+      <div class="typing-grid">
+        <article class="typing-card typing-card--swipe">
+          <div class="swipe-path" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="eyebrow">Swipe typing</p>
+          <h3>Swipe. Type. Keep moving.</h3>
+          <p>Swipe typing is available for supported languages, including German and Italian.</p>
         </article>
-        <article class="feature">
-          <h3 class="feature__title">Layouts</h3>
-          <p class="feature__text">
-            QWERTY, AZERTY, and QWERTZ, with an optional number row.
-          </p>
-        </article>
-        <article class="feature">
-          <h3 class="feature__title">Quick Phrases</h3>
-          <p class="feature__text">
-            Insert personal phrases you create and keep locally.
-          </p>
-        </article>
-        <article class="feature">
-          <h3 class="feature__title">Personal Dictionary</h3>
-          <p class="feature__text">
-            Add words that matter to you. Entries stay on your device.
-          </p>
-        </article>
-        <article class="feature">
-          <h3 class="feature__title">Local candidates</h3>
-          <p class="feature__text">
-            Word candidates generated on-device from local data.
-          </p>
-        </article>
-        <article class="feature">
-          <h3 class="feature__title">Local Emoji search</h3>
-          <p class="feature__text">
-            Find Emoji using a bundled catalog and on-device search.
-          </p>
-        </article>
-        <article class="feature">
-          <h3 class="feature__title">Swipe typing</h3>
-          <p class="feature__text">
-            Supported swipe paths are interpreted locally on your device.
-          </p>
-        </article>
-        <article class="feature">
-          <h3 class="feature__title">Optional autocorrection</h3>
-          <p class="feature__text">
-            Local autocorrection you can enable when you want it. Off by default.
-          </p>
-        </article>
-        <article class="feature">
-          <h3 class="feature__title">Offline ESDB lexicon</h3>
-          <p class="feature__text">
-            Bundled English Speller Database (ESDB) lexicon that works offline.
-          </p>
-        </article>
-        <article class="feature">
-          <h3 class="feature__title">Long-press characters</h3>
-          <p class="feature__text">
-            Access alternate characters with a long press.
-          </p>
-        </article>
-        <article class="feature">
-          <h3 class="feature__title">Spacebar cursor movement</h3>
-          <p class="feature__text">
-            Move the cursor by sliding on the spacebar.
-          </p>
-        </article>
-        <article class="feature">
-          <h3 class="feature__title">One-handed layouts</h3>
-          <p class="feature__text">
-            Left and right one-handed layouts for comfortable reach.
-          </p>
-        </article>
-        <article class="feature">
-          <h3 class="feature__title">Adaptive iPad layouts</h3>
-          <p class="feature__text">
-            Layouts that adapt for iPad use.
-          </p>
-        </article>
-        <article class="feature">
-          <h3 class="feature__title">Sound &amp; haptics</h3>
-          <p class="feature__text">
-            Keyboard click sound and configurable haptic feedback.
-          </p>
-        </article>
-        <article class="feature">
-          <h3 class="feature__title">Photo Background</h3>
-          <p class="feature__text">
-            Choose and adjust a keyboard background photo that is processed locally.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" aria-labelledby="privacy-heading">
-    <div class="container split">
-      <div class="section__header" style="margin-bottom: 0;">
-        <p class="section__eyebrow">Privacy</p>
-        <h2 class="section__title" id="privacy-heading">Your typing stays with you</h2>
-        <p class="section__lead">
-          Keyboard Studio performs supported typing features on-device. There is no
-          account, cloud typing service, advertising, analytics, or server-side
-          keyboard prediction.
-        </p>
-        <p style="margin-top: 1.5rem;">
-          <a href="/privacy/">Read the Privacy Policy</a>
-        </p>
-      </div>
-
-      <div class="panel">
-        <h3 class="panel__title">What stays local</h3>
-        <ul class="checklist">
-          <li>Typed text is not collected or uploaded</li>
-          <li>No analytics, behavioral tracking, or advertising</li>
-          <li>No account or cloud typing service</li>
-          <li>Candidates, Emoji search, and swipe typing are processed locally</li>
-          <li>Quick Phrases and Personal Dictionary remain local</li>
-          <li>The bundled lexicon works offline</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--alt" aria-labelledby="full-access-heading">
-    <div class="container">
-      <div class="section__header">
-        <p class="section__eyebrow">Full Access</p>
-        <h2 class="section__title" id="full-access-heading">Full Access is optional</h2>
-        <p class="section__lead">
-          You choose whether to allow Full Access. Keyboard Studio does not require
-          it for core typing.
-        </p>
-      </div>
-
-      <div class="split">
-        <div class="panel">
-          <h3 class="panel__title">Without Full Access</h3>
-          <ul class="checklist">
-            <li>Basic typing works</li>
-            <li>The bundled offline lexicon works</li>
-            <li>Gestures and layouts work</li>
-            <li>Safe defaults are available</li>
+        <article class="typing-card">
+          <div class="typing-card__icon" aria-hidden="true">Aa</div>
+          <p class="eyebrow">Local intelligence</p>
+          <h3>Helpful, right on your device.</h3>
+          <p>Candidate suggestions, bundled dictionaries, autocorrection, and Emoji search work locally.</p>
+          <ul class="mini-list">
+            <li>Local suggestions</li><li>Autocorrection</li><li>Emoji search</li>
           </ul>
-        </div>
-        <div class="panel">
-          <h3 class="panel__title">With Full Access</h3>
-          <ul class="checklist">
-            <li>
-              Settings saved in the containing App may synchronize through the local
-              App Group container
-            </li>
-            <li>
-              Quick Phrases and Personal Dictionary created in the App may be
-              available to the keyboard
-            </li>
-            <li>
-              Supported iOS keyboard feedback may be available when enabled
-            </li>
-          </ul>
-        </div>
-      </div>
+        </article>
 
-      <div class="panel" style="margin-top: 1.5rem;">
-        <p style="margin: 0; color: var(--color-text-secondary);">
-          <strong>iOS grants third-party keyboards additional capabilities when Full
-          Access is enabled.</strong> Keyboard Studio uses it for supported local
-          app-to-keyboard sharing and feedback. It does not use Full Access to upload
-          typing, swipe paths, Emoji searches, phrases, or dictionary entries, or to
-          activate accounts, advertising, or analytics.
-        </p>
+        <article class="typing-card typing-card--sound">
+          <div class="sound-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="eyebrow">Sound & haptics</p>
+          <h3>Make every tap feel right.</h3>
+          <p>
+            Choose from six premium sound styles — Balanced, Soft, Sharp, Bubble Bubble,
+            Crunchy, and Mechanical — and customize haptic feedback.
+          </p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="pricing-heading">
-    <div class="container">
-      <div class="cta-band">
-        <h2 class="cta-band__title" id="pricing-heading">One Purchase. No Subscription.</h2>
-        <p class="cta-band__text">
-          Keyboard Studio is planned as a paid App Store download. There are no
-          subscriptions, feature tiers, consumable purchases, Restore Purchase flow,
-          or advertisements. Pay once to download. All included features are available
-          after installation. No In-App Purchases.
-        </p>
-        <span class="store-badge" aria-disabled="true">Coming to the App Store</span>
+  <section class="section productivity" aria-labelledby="productivity-heading">
+    <div class="container productivity__layout">
+      <div class="section-heading">
+        <p class="eyebrow">Your shortcuts, your words</p>
+        <h2 id="productivity-heading">The little things add up.</h2>
+        <p>Keep what you type often close at hand, without turning your keyboard into a workspace.</p>
+      </div>
+
+      <div class="productivity__cards">
+        <article class="utility-card">
+          <span class="utility-card__mark" aria-hidden="true">“</span>
+          <h3>Quick Phrases</h3>
+          <p>Save frequently used text for faster typing.</p>
+        </article>
+        <article class="utility-card">
+          <span class="utility-card__mark" aria-hidden="true">+</span>
+          <h3>Personal Dictionary</h3>
+          <p>Create your own vocabulary and personalized entries.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section section--alt" aria-labelledby="faq-heading">
+  <section class="section pricing" aria-labelledby="pricing-heading">
     <div class="container">
-      <div class="section__header">
-        <p class="section__eyebrow">FAQ</p>
-        <h2 class="section__title" id="faq-heading">Common questions</h2>
-        <p class="section__lead">
-          Short answers here—full setup and troubleshooting on Support.
-        </p>
+      <div class="section-heading section-heading--center">
+        <p class="eyebrow">Simple from the start</p>
+        <h2 id="pricing-heading">Start free. Keep it forever.</h2>
+        <p>No subscription. Choose the experience that fits you.</p>
       </div>
 
-      <div class="faq-list">
-        <article class="faq-item">
-          <h3>Is Keyboard Studio free?</h3>
-          <p>
-            No. It is planned as a paid App Store download. Pay once, with no
-            subscription and no In-App Purchases.
-          </p>
+      <div class="pricing-grid">
+        <article class="price-card">
+          <span class="price-card__step">01</span>
+          <h3>Start Free</h3>
+          <p>Explore Keyboard Studio with the free experience.</p>
         </article>
-        <article class="faq-item">
-          <h3>Does Keyboard Studio collect what I type?</h3>
-          <p>
-            No. Typed text is not collected or uploaded. There is no analytics SDK
-            and no advertising.
-          </p>
+        <article class="price-card price-card--featured">
+          <span class="price-card__badge">Eligible users</span>
+          <span class="price-card__step">02</span>
+          <h3>3-Day Pro Trial</h3>
+          <p>Unlock all Pro features free for 3 days, then return to Free.</p>
         </article>
-        <article class="faq-item">
-          <h3>Do I need Full Access?</h3>
-          <p>
-            No. Full Access is optional. Without it, basic typing, the offline
-            lexicon, gestures, and layouts still work.
-          </p>
-        </article>
-        <article class="faq-item">
-          <h3>Where can I get help?</h3>
-          <p>
-            Visit the <a href="/support/">Support</a> page for setup steps,
-            troubleshooting, and contact information.
-          </p>
+        <article class="price-card">
+          <span class="price-card__step">03</span>
+          <h3>Lifetime Pro</h3>
+          <p>Unlock Pro with one one-time purchase. No subscription.</p>
         </article>
       </div>
+
+      <div class="pricing__action">
+        <a class="button button--store" href={APP_STORE_URL}>
+          <img src="/app-icon.png" width="28" height="28" alt="" aria-hidden="true" />
+          <span><small>Download on the</small>App Store</span>
+        </a>
+        <small>Free download · In-app purchase available</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="section privacy-note" aria-labelledby="privacy-heading">
+    <div class="container privacy-note__inner">
+      <div class="privacy-note__symbol" aria-hidden="true">⌁</div>
+      <div>
+        <p class="eyebrow">Local typing intelligence</p>
+        <h2 id="privacy-heading">Your words don’t need a cloud.</h2>
+        <p>
+          Language processing and bundled dictionaries stay local. Keyboard Studio
+          does not use cloud AI or server-based prediction.
+        </p>
+      </div>
+      <a class="text-link" href="/privacy/">Read the Privacy Policy <span aria-hidden="true">→</span></a>
     </div>
   </section>
 </PageLayout>
